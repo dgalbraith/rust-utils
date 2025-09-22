@@ -1,0 +1,27 @@
+# Rust
+/target/
+**/*.rs.bk
+Cargo.lock
+
+# Coverage reports
+/coverage/
+*.profraw
+tarpaulin-report.html
+cobertura.xml
+lcov.info
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Runtime
+*.pdb
