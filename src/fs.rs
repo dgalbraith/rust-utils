@@ -4,7 +4,7 @@ use std::path::Path;
 use crate::error::{Result, RustUtilsError};
 
 pub fn get_file_metadata(path: &Path) -> Result<Metadata> {
-    std::fs::symlink_metadata(path).map_err(|e| RustUtilsError::Io(e))
+    std::fs::symlink_metadata(path).map_err(RustUtilsError::Io)
 }
 
 pub fn should_exclude(path: &Path, patterns: &[String]) -> bool {
