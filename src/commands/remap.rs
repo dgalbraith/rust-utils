@@ -418,7 +418,7 @@ mod tests {
         let file_path = temp_dir.path().join("test_file.txt");
         File::create(&file_path)?;
 
-        let current_gid = getuid().as_raw(); // Files typically get user's primary GID
+        let current_gid = getgid().as_raw(); // Files typically get user's primary GID
 
         let args = RemapArgs {
             base_directory: temp_dir.path().to_path_buf(),
@@ -614,7 +614,7 @@ mod tests {
     File::create(&file_path)?;
 
     let current_uid = getuid().as_raw();
-    let current_gid = getuid().as_raw(); // Use same for GID
+    let current_gid = getgid().as_raw(); // Use same for GID
 
     // Verify the file actually has current user ownership and is in range
     let metadata = get_file_metadata(&file_path)?;
